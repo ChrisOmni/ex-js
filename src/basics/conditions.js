@@ -14,6 +14,7 @@
  */
 export function isBiggerThan2(n) {
   // Write your code here
+  console.log('bonjour')
 }
 
 /**
