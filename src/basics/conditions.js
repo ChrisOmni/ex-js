@@ -17,8 +17,7 @@ import { error } from "console";
 export function isBiggerThan2(n) {
   // Write your code here
   if (isNaN(n)) {
-    error();
-    return;
+    throw new Error(`${n} is not a number!!!`);
   } else {
   return n > 2 ? true : false
   }
@@ -31,4 +30,10 @@ export function isBiggerThan2(n) {
  */
 export function isMult(n, m) {
   // Write your code here
+  if (isNaN(n) || isNaN(m)) {
+    throw new Error(`${n} and ${m} needs to be numbers!!!`);
+  } else {
+    return n % m === 0 ? true : false;
+  }
 }
+console.log(isMult(100, 10))
