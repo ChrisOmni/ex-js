@@ -8,13 +8,20 @@
  *   can lead to unexpected behaviors
  */
 
+import { error } from "console";
+
 /**
  * @param {number} n
  * @return {boolean} true if n is bigger than 2
  */
 export function isBiggerThan2(n) {
   // Write your code here
-  console.log('bonjour')
+  if (isNaN(n)) {
+    error();
+    return;
+  } else {
+  return n > 2 ? true : false
+  }
 }
 
 /**

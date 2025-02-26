@@ -8,4 +8,5 @@
  */
 export function findAndReplacePreservingCase(needle, haystack, newWord) {
   // Write your code here
+  // replaceAll
 }
