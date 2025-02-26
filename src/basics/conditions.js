@@ -36,4 +36,3 @@ export function isMult(n, m) {
     return n % m === 0 ? true : false;
   }
 }
-console.log(isMult(100, 10))

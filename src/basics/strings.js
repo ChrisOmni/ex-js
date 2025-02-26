@@ -9,4 +9,29 @@
 export function findAndReplacePreservingCase(needle, haystack, newWord) {
   // Write your code here
   // replaceAll
+  const regex = new RegExp(needle, "gi")
+  if (!typeof value === "string") {
+    throw new Error("all the parameters must be strings!!!")
+  } else {
+    const result = haystack.replaceAll(regex, replace(needle, newWord))
+    return result
+  }
 }
+
+function replace(needle, newWord) {
+  const needleArr = needle.split("")
+  const newWordArr = newWord.split("")
+  if (newWordArr.length > needleArr.length) {
+    const newSize = needle.length - newWord.length;
+    let i = newSize
+    //while (i != 0) {
+      newWordArr.pop()
+      i--
+    }
+    const result = newWordArr.join()
+    return result
+  } else 
+  return newWord
+}
+
+console.log(findAndReplacePreservingCase('toto', 'Toto is a good programmer', 'anonymous'))
