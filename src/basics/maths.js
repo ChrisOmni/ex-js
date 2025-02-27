@@ -28,7 +28,16 @@ export function roundNumberToOneDecimals(n) {
  */
 export function computeAverage(grades) {
   // Write your code here
+  let sum = 0
+  for (const grade of grades) {
+    if (isNaN(grade) || grade === "") {
+      throw new Error("You should only input numbers")
+    }
+    sum += grade
+  }
+  return sum / grades.length
 }
+
 
 /**
  * @param {number[]} grades An array containing all grades
