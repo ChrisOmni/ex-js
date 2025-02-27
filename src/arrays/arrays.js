@@ -5,12 +5,9 @@
 export function splitAllStringsByWordAndFilterEmptyOnes(array) {
   // Write your code here
   const arrayJoined = array.join(" ")
-  console.log(arrayJoined)
   const arrayRearranged = arrayJoined.match(/\b\w+\b/g)
   return arrayRearranged
 }
-
-console.log(splitAllStringsByWordAndFilterEmptyOnes(['Toto and tutu', 'goes', '', 'to the', 'beach',]))
 
 /**
  * @param {*[]} array1
@@ -20,6 +17,8 @@ console.log(splitAllStringsByWordAndFilterEmptyOnes(['Toto and tutu', 'goes', ''
  */
 export function concatenateArrays(array1, array2) {
   // Write your code here
+  const newArray = array1.concat(array2)
+  return newArray
 }
 
 /**
