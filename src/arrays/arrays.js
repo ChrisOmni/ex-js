@@ -33,4 +33,21 @@ export function replaceElementsInArrayAtAGivenPlace(
   ...newElements
 ) {
   // Write your code here
+  const newArray = array.slice()
+  const suppr = [...newElements].length
+  const newArrays = newArray.concat(newElements)
+  let i = 0
+  const result = []
+  while (i < newArray.length) {
+    if (i === index) {
+      result.push(newElements)
+    }
+    result.push(newArray[i])
+    i++
+  }
+  //newArray.splice(index, suppr, newElements)
+  return result
 }
+
+const originalArray =  [2, 3, 4, 5]
+console.log(replaceElementsInArrayAtAGivenPlace(originalArray, 1, 10))
