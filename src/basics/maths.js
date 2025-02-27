@@ -16,6 +16,10 @@ export function computeSphereVolume(diameter) {
  */
 export function roundNumberToOneDecimals(n) {
   // Write your code here
+  if (isNaN(n)) {
+    throw new Error("you should input a Number!!!")
+  }
+    return (Math.round(n*10))/10
 }
 
 /**
