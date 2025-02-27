@@ -31,10 +31,8 @@ function replacing(needle, haystack, newWord) {
       }
       if (`${haystackArr[i]}` == `${haystackArr[i]}`.toUpperCase()){
         char += `${newWordArr[i]}`.toUpperCase()
-        console.log(char)
       } else {
         char += newWordArr[i]
-        console.log(char)
       }
       i++
     }
@@ -43,10 +41,8 @@ function replacing(needle, haystack, newWord) {
       while (i < newWordArr.length) {
         if (`${haystackArr[i]}` == `${haystackArr[i]}`.toUpperCase()){
           char += `${newWordArr[i]}`.toUpperCase()
-          console.log(char)
         } else {
           char += newWordArr[i]
-          console.log(char)
         }
         i++
       }

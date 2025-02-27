@@ -4,6 +4,10 @@
  */
 export function computeSphereVolume(diameter) {
   // Write your code here
+  if (isNaN(diameter) || diameter < 0) {
+    throw new Error("your diameter should be a positive number!!!")
+  }
+  return 4/3*Math.PI*((diameter/2)**3)
 }
 
 /**
