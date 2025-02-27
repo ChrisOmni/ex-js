@@ -31,13 +31,12 @@ export function computeAverage(grades) {
   let sum = 0
   for (const grade of grades) {
     if (isNaN(grade) || grade === "") {
-      throw new Error("You should only input numbers")
+      throw new Error("You should only input numbers!!")
     }
     sum += grade
   }
   return sum / grades.length
 }
-
 
 /**
  * @param {number[]} grades An array containing all grades
@@ -45,4 +44,12 @@ export function computeAverage(grades) {
  */
 export function roundedAverage(grades) {
   // Write your code here
+  let sum = 0
+  for (const grade of grades) {
+    if (isNaN(grade) || grade === "") {
+      throw new Error("You should only input numbers!!!")
+    }
+    sum += grade
+  }
+  return (Math.round((sum/grades.length)*10))/10
 }
