@@ -4,7 +4,13 @@
  */
 export function splitAllStringsByWordAndFilterEmptyOnes(array) {
   // Write your code here
+  const arrayJoined = array.join(" ")
+  console.log(arrayJoined)
+  const arrayRearranged = arrayJoined.match(/\b\w+\b/g)
+  return arrayRearranged
 }
+
+console.log(splitAllStringsByWordAndFilterEmptyOnes(['Toto and tutu', 'goes', '', 'to the', 'beach',]))
 
 /**
  * @param {*[]} array1
