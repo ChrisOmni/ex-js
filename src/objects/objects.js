@@ -11,6 +11,11 @@
  */
 export function crateUserObject() {
   // Write your code here
+  const userObj = {
+    first_name: "Toto",
+    last_name: "Tutu",
+  }
+  return userObj
 }
 
 /**
