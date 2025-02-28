@@ -37,7 +37,18 @@ export function accessPropertiesInObjects(object) {
  */
 export function iteratesThroughObjectValuesAndProperties(object) {
   // Write your code here
+  const result1 = []
+  const result2 = []
+  for (const [key, value] of Object.entries(object)) {
+    result1.push(`${[key].join("").toUpperCase().split()}`)
+    result2.push(`${[value].join("").toLowerCase().split()}`)
+  }
+  const finalResult = {keys: result1, values: result2}
+  return finalResult
 }
+const obj = {first_name: "bob", last_name: "billy"}
+console.log(obj)
+console.log(iteratesThroughObjectValuesAndProperties(obj))
 
 /**
  * Return the name of the first younger and last older user in the array
