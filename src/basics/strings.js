@@ -20,33 +20,19 @@ export function findAndReplacePreservingCase(needle, haystack, newWord) {
 function replacing(needle, newWord) {
   const needleArr = needle.split("")
   const newWordArr = newWord.split("")
-  const newSize = newWordArr.length - needleArr.length;
-  let i = 0
-  let j= 0
+  const newSize = newWordArr.length - needleArr.length
   let char = ""
-  if (newWordArr.length > needleArr.length) {
-    while (j < newSize) {
-      newWordArr.pop()
-      console.log(newWordArr)
-      j++
+    if (newWordArr.length > needleArr.length) {
+      for (let i = 0; i < newSize; i++) {
+        newWordArr.pop()
+      }
     }
-    while (i < newWordArr.length) {
-      if (`${needleArr[i]}` == `${needleArr[i]}`.toUpperCase()){
-        char += `${newWordArr[i]}`.toUpperCase()
+    for (let j = 0; j < newWordArr.length; j++) {
+      if (`${needleArr[j]}` == `${needleArr[j]}`.toUpperCase()){
+        char += `${newWordArr[j]}`.toUpperCase()
       } else {
-        char += newWordArr[i]
+        char += newWordArr[j]
       }
-      i++
     }
-  } else {
-      while (i < newWordArr.length) {
-        if (`${needleArr[i]}` == `${needleArr[i]}`.toUpperCase()){
-          char += `${newWordArr[i]}`.toUpperCase()
-        } else {
-          char += newWordArr[i]
-        }
-        i++
-      }
-    } 
   return char
 }
