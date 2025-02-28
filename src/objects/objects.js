@@ -46,9 +46,6 @@ export function iteratesThroughObjectValuesAndProperties(object) {
   const finalResult = {keys: result1, values: result2}
   return finalResult
 }
-const obj = {first_name: "bob", last_name: "billy"}
-console.log(obj)
-console.log(iteratesThroughObjectValuesAndProperties(obj))
 
 /**
  * Return the name of the first younger and last older user in the array
@@ -57,7 +54,29 @@ console.log(iteratesThroughObjectValuesAndProperties(obj))
  */
 export function retrieveMaximumMinimumUserAges(users) {
   // Write your code here
+  const one =  users[0]
+  const two =  users[1]
+  const three =  users[2]
+  const four =  users[3]
+  const five = users[4]
+  const six =  users[5]
+  let ages = []
+  let  i = 0
+  users.forEach((element) => {
+    ages.push(users[i].age)
+    i++
+  })
+  const youngest = ages.sort().find(name => users[name] === ages[0])
+  console.log(ages)
+  console.log(youngest)
 }
+
+retrieveMaximumMinimumUserAges([
+  { name: 'Toto', age: 20 },
+  { name: 'Tata', age: 18 },
+  { name: 'Titi', age: 28 },
+  { name: 'Tutu', age: 32 },
+])
 
 /**
  * In javascript, objects can be represented as string, this is JSON
