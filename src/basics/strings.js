@@ -9,37 +9,38 @@
 export function findAndReplacePreservingCase(needle, haystack, newWord) {
   // Write your code here
   const regex = new RegExp(needle, "gi")
-  if (!typeof value === "string") {
-    throw new Error("all the parameters must be strings!!!")
+  if (!typeof value === "string" || needle === "" || haystack === "" || newWord === "") {
+    throw new Error("all the parameters must be strings and not empty!!!")
   } else {
-    const result = haystack.replaceAll(regex, replacing(needle, haystack, newWord))
+    const result = haystack.replaceAll(regex, (match) => replacing(match, newWord))
     return result
   }
 }
 
-function replacing(needle, haystack, newWord) {
+function replacing(needle, newWord) {
   const needleArr = needle.split("")
   const newWordArr = newWord.split("")
-  const haystackArr = haystack.split("")
   const newSize = newWordArr.length - needleArr.length;
   let i = 0
+  let j= 0
   let char = ""
   if (newWordArr.length > needleArr.length) {
-    while (i < newSize - 1) {
-      if (newWordArr.length > needleArr.length){
-        newWordArr.pop()
-      }
-      if (`${haystackArr[i]}` == `${haystackArr[i]}`.toUpperCase()){
+    while (j < newSize) {
+      newWordArr.pop()
+      console.log(newWordArr)
+      j++
+    }
+    while (i < newWordArr.length) {
+      if (`${needleArr[i]}` == `${needleArr[i]}`.toUpperCase()){
         char += `${newWordArr[i]}`.toUpperCase()
       } else {
         char += newWordArr[i]
       }
       i++
     }
-    return char
   } else {
       while (i < newWordArr.length) {
-        if (`${haystackArr[i]}` == `${haystackArr[i]}`.toUpperCase()){
+        if (`${needleArr[i]}` == `${needleArr[i]}`.toUpperCase()){
           char += `${newWordArr[i]}`.toUpperCase()
         } else {
           char += newWordArr[i]
@@ -49,5 +50,3 @@ function replacing(needle, haystack, newWord) {
     } 
   return char
 }
-
-console.log(findAndReplacePreservingCase('toto', 'ToTo is a good programmer', 'ta'))

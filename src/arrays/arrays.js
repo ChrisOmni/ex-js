@@ -35,6 +35,3 @@ export function replaceElementsInArrayAtAGivenPlace(
   // Write your code here
   return array.toSpliced(index, newElements.length, ...newElements)
 }
-
-const originalArray =  [2, 3, 4, 5]
-console.log(replaceElementsInArrayAtAGivenPlace(originalArray, 1, 10, 2, 7))
