@@ -25,6 +25,7 @@ export function crateUserObject() {
  */
 export function accessPropertiesInObjects(object) {
   // Write your code here
+  return object.first_name + " " + object.last_name
 }
 
 /**
