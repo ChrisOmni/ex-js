@@ -5,6 +5,16 @@
  */
 export function displayInputContentInAlertOnEnterKey() {
   // Write your code here
+  const message = document.getElementById("write-some-text")
+  message.addEventListener("keypress", (i) => {
+    if (i.key === "Enter") {
+      if (message.value === "") {
+        return;
+    } else {
+      alert(message.value)
+    }
+    }
+  })
 }
 
 /**
