@@ -28,7 +28,11 @@ export function addElementsInListOnEnterKey() {
   const listElements = document.getElementById("list")
   listInput.addEventListener("keypress", (i) => {
     if (i.key === "Enter") {
-      listElements.innerHTML += (`<li id="${listInput.value}-id">${listInput.value}</li>`)
+      if (listInput.value === "") {
+        return
+      }
+      listElements.innerHTML += (`<li id="id">${listInput.value}</li>`)
+      listInput.value = ""
     }
   })
 }
@@ -42,6 +46,7 @@ export function removeElementsFromListWhenClicked() {
   const listElements = document.getElementById("list")
   const listInput = document.getElementById("list-input")
   listElements.addEventListener ("click", () => {
-    document.getElementById(`${listInput.value}-id`).remove()
+    document.getElementById(`id`).remove()
+    listInput.value = ""
   })
 }
