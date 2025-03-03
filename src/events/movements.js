@@ -5,6 +5,11 @@
  */
 export function mouseMovements() {
   // Write your code here
+  document.addEventListener("mousemove", (event) => {
+    const x = event.clientX
+    const y = event.clientY
+    document.getElementById("mouse-coordinate").innerText = `x: ${x}, y: ${y}`
+  })
 }
 
 const randomRGB = () => {
