@@ -5,6 +5,7 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#objects
  */
 
+import { connect } from "http2"
 import { parse } from "path"
 
 /**
@@ -76,12 +77,15 @@ export function parseJavaScriptObjectNotation(string) {
   return JSON.parse(string)
 }
 
-console.log(parseJavaScriptObjectNotation('{"name":"toto"}'))
-
 /**
  * @param {Object} object
  * @return {string} An string representing the given object
  */
 export function stringifyJavaScriptObjectNotation(object) {
   // Write your code here
+  return JSON.stringify(object)
 }
+
+console.log(stringifyJavaScriptObjectNotation({
+  name: 'toto',
+}))
