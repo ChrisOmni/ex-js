@@ -54,21 +54,15 @@ export function iteratesThroughObjectValuesAndProperties(object) {
  */
 export function retrieveMaximumMinimumUserAges(users) {
   // Write your code here
-  const one =  users[0]
-  const two =  users[1]
-  const three =  users[2]
-  const four =  users[3]
-  const five = users[4]
-  const six =  users[5]
-  let ages = []
-  let  i = 0
-  users.forEach((element) => {
-    ages.push(users[i].age)
-    i++
-  })
-  const youngest = ages.sort().find(name => users[name] === ages[0])
-  console.log(ages)
-  console.log(youngest)
+  const sorted = users.sort(compareFN)
+  console.log(sorted)
+  const result = {younger: sorted[1].name, older: sorted[sorted.length - 1].name}
+  console.log(result)
+  return result
+}
+
+function compareFN(a, b) {
+  return a - b
 }
 
 retrieveMaximumMinimumUserAges([
