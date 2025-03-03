@@ -18,6 +18,7 @@ export function getElementFromDomAndChangeColorToRed() {
  */
 export function addElementsInDOM() {
   // Write your code here
+  document.getElementById("add-your-elements-in-this-element").innerHTML = (`<p>Bonjour</p><p>Toto</p>`)
 }
 
 /**
