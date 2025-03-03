@@ -9,7 +9,7 @@
  */
 export function getElementFromDomAndChangeColorToRed() {
   // Write your code here
-  document.getElementById("change-my-color").style.color = "red"
+  document.getElementById("change-my-color").style.color = "rgb(255, 0, 0)"
 }
 
 /**
@@ -29,4 +29,10 @@ export function addElementsInDOM() {
  */
 export function addAListInDomFromAnArrayOfObjects(listElements) {
   // Write your code here
+  const newList = document.getElementById("add-list-here").innerHTML = (`<ul id="list"></ul>`)
+  for(let i = 0; i < listElements.length; i++) {
+     console.log(document.getElementById("list"))
+    document.getElementById("list").innerHTML += (`<li id="${listElements[i].name}">${listElements[i].name}</li>`)
+    document.getElementById(`${listElements[i].name}`).style.backgroundColor = listElements[i].color
+  }
 }
