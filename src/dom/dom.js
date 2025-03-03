@@ -9,6 +9,7 @@
  */
 export function getElementFromDomAndChangeColorToRed() {
   // Write your code here
+  document.getElementById("change-my-color").style.color = "red"
 }
 
 /**
