@@ -24,6 +24,13 @@ export function displayInputContentInAlertOnEnterKey() {
  */
 export function addElementsInListOnEnterKey() {
   // Write your code here
+  const listInput = document.getElementById("list-input")
+  const listElements = document.getElementById("list")
+  listInput.addEventListener("keypress", (i) => {
+    if (i.key === "Enter") {
+      listElements.innerHTML += (`<li>${listInput.value}</li>`)
+    }
+  })
 }
 
 /**

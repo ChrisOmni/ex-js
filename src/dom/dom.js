@@ -29,10 +29,10 @@ export function addElementsInDOM() {
  */
 export function addAListInDomFromAnArrayOfObjects(listElements) {
   // Write your code here
-  const newList = document.getElementById("add-list-here").innerHTML = (`<ul id="list"></ul>`)
+  const newList = document.getElementById("add-list-here").innerHTML = (`<ul id="list-1"></ul>`)
   for(let i = 0; i < listElements.length; i++) {
-     console.log(document.getElementById("list"))
-    document.getElementById("list").innerHTML += (`<li id="${listElements[i].name}">${listElements[i].name}</li>`)
+     console.log(document.getElementById("list-1"))
+    document.getElementById("list-1").innerHTML += (`<li id="${listElements[i].name}">${listElements[i].name}</li>`)
     document.getElementById(`${listElements[i].name}`).style.backgroundColor = listElements[i].color
   }
 }
