@@ -26,6 +26,14 @@ export function addElementsInListOnEnterKey() {
   // Write your code here
   const listInput = document.getElementById("list-input")
   const listElements = document.getElementById("list")
+  listInput.addEventListener("blur", () => {
+    if (listInput.value === "") {
+      return;
+    } else {
+        listElements.innerHTML += (`<li id="id">${listInput.value}</li>`)
+        listInput.value = ""
+    }
+  })
   listInput.addEventListener("keypress", (i) => {
     if (i.key === "Enter") {
       if (listInput.value === "") {

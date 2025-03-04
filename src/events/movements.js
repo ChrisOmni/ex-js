@@ -35,14 +35,19 @@ export function hoverFocusAndBlur() {
   focusMeInput.addEventListener("blur", () => {
     focusMeInput.style.borderColor = enteringColor
   })
-  focusMeInput.addEventListener("mouseover", () => {
-    label.innerHTML += '\nYes, you hover me !'
+  focusMeInput.addEventListener("mouseover", ({ currentTarget }) => {
+    for (const label of currentTarget.labels) {
+      label.textContent = 'Yes, you hover me !'
+    }
   })
   focusMeInput.addEventListener("focus", () => {
     focusMeInput.style.borderColor = randomRGB()
   })
   focusMeInput.addEventListener("mouseout" , () => {
-    label.innerHTML = "Focus me :"
+    for (const label2 of focusMeInput.labels) {
+      label2.textContent = 'A second label ! just for fun'
+    }
+    label.textContent = "Focus me :"
   })
 }
 
@@ -56,4 +61,12 @@ export function hoverFocusAndBlur() {
  */
 export function changesOnInputEvents() {
   // Write your code here
+  const labels = document.querySelectorAll('label[for="focus-me"]')
+  const focusMeInput = document.getElementById("focus-me")
+  focusMeInput.addEventListener("input", () => {
+    enteringColor = randomRGB()
+    for (const label of labels) {
+      label.style.color = enteringColor
+    }
+  })
 }
