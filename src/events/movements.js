@@ -23,12 +23,27 @@ let enteringColor = ''
  * You need to add three behaviors to this input.
  * First, when you hover it, you have to display a message in his label with
  *        the text "Yes, you hover me !". and remove the message when the hover is loosed.
- * Second, when you focus the input, you have to change hist border color to a random one,
+ * Second, when you focus the input, you have to change his border color to a random one,
  *         but different from all the previously used and different from the original one.
  * Third, when you loose focus of the field, you need to reset the border color to the default one.
  */
 export function hoverFocusAndBlur() {
   // Write your code here
+  const focusMeInput = document.getElementById("focus-me")
+  const label = document.querySelector('label[for="focus-me"]')
+  enteringColor = focusMeInput.style.borderColor
+  focusMeInput.addEventListener("blur", () => {
+    focusMeInput.style.borderColor = enteringColor
+  })
+  focusMeInput.addEventListener("mouseover", () => {
+    label.innerHTML += '\nYes, you hover me !'
+  })
+  focusMeInput.addEventListener("focus", () => {
+    focusMeInput.style.borderColor = randomRGB()
+  })
+  focusMeInput.addEventListener("mouseout" , () => {
+    label.innerHTML = "Focus me :"
+  })
 }
 
 /**
