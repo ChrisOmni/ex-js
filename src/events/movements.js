@@ -5,10 +5,8 @@
  */
 export function mouseMovements() {
   // Write your code here
-  document.addEventListener("mousemove", (event) => {
-    const x = event.clientX
-    const y = event.clientY
-    document.getElementById("mouse-coordinate").innerText = `x: ${x}, y: ${y}`
+  addEventListener("mousemove", (event) => {
+    document.getElementById("mouse-coordinates").innerText = `x: ${event.clientX}, y: ${event.clientY}`
   })
 }
 
